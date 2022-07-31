@@ -1,75 +1,112 @@
 <!DOCTYPE html>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/*fira-sub*/
-@import url(/sofi/fonts/Roboto-regular.css);
+
+:root {
+    --web-color: #4285f4;
+    --web-image: url('/_img/web.jpg');
+}
 
 body {
     margin: 0;
-    background-color: rgb(31, 29, 29);
-    font-family: Roboto, sans;
-    color: hsl(12, 95%, 95%);;
-}
-
-.index {
-    max-width: 1080px;
-    margin: auto;
+    background-color: #455a64;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
     text-decoration: none;
-    color: hsl(12, 95%, 95%);;
+    color: inherit;
 }
 
-.breadcrumb {
-    
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2em;
+    padding: 3em 1em 1em 1em;
+    margin: auto;
+    max-width: 400px;
+    transition: max-width .5s;
+}
+
+.card {
+    color: white;
     display: flex;
-    gap: 0px;
-    padding: 0.5em 0em 0.5em 0em;
-    background-color: rgb(21, 21, 145);
-}
-.breadcrumb li {
-    display: flex;
-}
-
-.breadcrumb a {
-    padding: 0 1em;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 5px solid;
+    border-radius: 2%;
+    height: 200px;
 }
 
-.breadcrumb li::after {
-    content: "/";
-    display:block;
+.card h1 {
+    text-align: center;
+    font-size: 1.6em;
+    padding: 0.3em;
 }
 
-div.item {
-    padding: 1em;
-    margin: 0.5em 0;
-    background-color: rgb(53, 49, 49)
+.card img {
+    width: 100%;
+    max-height: 40%;
+    height: auto;
+    object-fit: cover;
 }
+
+.card.mobils{
+    background-color: var(--mobils-color);
+    border-color: var(--mobils-color);
+}
+
+.card.web{
+    background-color: var(--web-color);
+    border-color: var(--web-color);
+}
+
+.card.programacio{
+    background-color: var(--programacio-color);
+    border-color: var(--programacio-color);
+}
+
+@media(min-width: 768px){
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr; 
+        max-width: 700px;
+    }
+
+    .card {
+        height: 250px;
+    }
+}
+
+@media(min-width: 1024px){
+    .cards {
+        max-width: 900px;
+    }
+}
+
+@media(min-width: 1240px){
+    .cards {
+        max-width: 1024px;
+    }
+}
+
 </style>
+</head>
 
-<div class="index">
+<div class="cards">
+    <a href="/smx/m8/">
+        <div class="card web">
+            <h1>SMX-M8-Aplicacions web</h1>
+            <img src="/_img/web.jpg">
+        </div>
+    </a>
+
+    <a href="/smx/">
+        <div class="card web">
+            <h1>SMX-M8-Aplicacions web</h1>
+            <img src="/_img/web.jpg">
+        </div>
+    </a>
     
-
-    <h1>⌂</h1>
-    <div class="items">
-    <a href="/dam">
-            <div class="item">
-                <span>CFGS Desenvolupament d&#39;aplicacions multiplataforma</span>
-            </div>
-        </a><a href="/asix">
-            <div class="item">
-                <span>CFGS Administració de sistemes informàtics en xarxa</span>
-            </div>
-        </a><a href="/daw">
-            <div class="item">
-                <span>CFGS Desenvolupament d&#39;aplicacions web</span>
-            </div>
-        </a><a href="/smx">
-            <div class="item">
-                <span>CFGM Sistemes microinformàtics i xarxes</span>
-            </div>
-        </a>
-    </div>
 </div>
