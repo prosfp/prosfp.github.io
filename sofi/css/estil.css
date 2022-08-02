@@ -165,6 +165,19 @@ ul, ol {
     margin-bottom: 3em;
 }
 
+ol.nest {
+    counter-reset: item;
+}
+
+ol.nest>li {
+    display: block
+  }
+
+ol.nest>li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item
+  }
+
 resum {
     color: inherit;
 }
@@ -569,9 +582,6 @@ check::before {
     color: #189E49;
     margin-right: 1em;
 }
-
-
-
 
 
 

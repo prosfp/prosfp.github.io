@@ -1,80 +1,81 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-/*fira-sub*/
-@import url(/sofi/fonts/Roboto-regular.css);
+  /*fira-sub*/
+  @import url(/sofi/fonts/Roboto-regular.css);
 
-body {
+  body {
     margin: 0;
     background-color: rgb(31, 29, 29);
     font-family: Roboto, sans;
-    color: hsl(12, 95%, 95%);;
-}
+    color: hsl(12, 95%, 95%);
+  }
 
-.index {
+  .index {
     max-width: 1080px;
     margin: auto;
-}
+  }
 
-a {
+  a {
     text-decoration: none;
-    color: hsl(12, 95%, 95%);;
-}
+    color: hsl(12, 95%, 95%);
+  }
 
-.breadcrumb {
-    
+  .breadcrumb {
     display: flex;
     gap: 0px;
     padding: 0.5em 0em 0.5em 0em;
     background-color: rgb(21, 21, 145);
-}
-.breadcrumb li {
+  }
+  .breadcrumb li {
     display: flex;
-}
+  }
 
-.breadcrumb a {
+  .breadcrumb a {
     padding: 0 1em;
-}
+  }
 
-.breadcrumb li::after {
+  .breadcrumb li::after {
     content: "/";
-    display:block;
-}
+    display: block;
+  }
 
-div.item {
+  div.item {
     padding: 1em;
     margin: 0.5em 0;
-    background-color: rgb(53, 49, 49)
-}
+    background-color: rgb(53, 49, 49);
+  }
 </style>
 
 <div class="index">
-    
-        <ul class="breadcrumb">
-        <li>
-            <a href="/"> ⌂ </a>
-        </li>
-        <li>
-            <a href="/smx"> smx </a>
-        </li>
-        <li>
-            <a href="/smx/m8"> m8 </a>
-        </li>
-        
-        </ul>
-    
+  <ul class="breadcrumb">
+    <li>
+      <a href="/"> ⌂ </a>
+    </li>
+    <li>
+      <a href="/smx"> smx </a>
+    </li>
+    <li>
+      <a href="/smx/m8"> m8 </a>
+    </li>
+  </ul>
 
-    <h1>UF2 - Gestors d’arxius web</h1>
-    <div class="items">
+  <h1>UF2 - Gestors d’arxius web</h1>
+  <div class="items">
+    <a href="/smx/m8/uf2/objectius/">
+      <div class="item">
+        <span>Objectius i continguts</span>
+      </div>
+    </a>
     <a href="/smx/m8/uf2/nextcloud">
-            <div class="item">
-                <span></span>
-            </div>
-        </a><a href="/smx/m8/uf2/webfilemanager">
-            <div class="item">
-                <span>WebFileManager</span>
-            </div>
-        </a>
-    </div>
+      <div class="item">
+        <span>Nextcloud</span>
+      </div> </a
+    ><a href="/smx/m8/uf2/webfilemanager">
+      <div class="item">
+        <span>WebFileManager</span>
+      </div>
+    </a>
+  </div>
 </div>
