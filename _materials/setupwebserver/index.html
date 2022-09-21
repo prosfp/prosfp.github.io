@@ -1,81 +1,112 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script type="module" src="/sofi/js/script.js"></script>
-<link rel="stylesheet" href="/sofi/css/estil.css">
+<link rel="stylesheet" href="/sofi/css/estil.css" />
 
 <section>
-    <h1>Preparar el servidor web</h1>
+  <h1>Preparar el servidor web</h1>
 
-        <p>Pots fer servir aquest <a href="https://github.com/smxm8/setup_container">
-            script per a posar a punt el servidor</a></p>
+  <p>
+    Pots fer servir aquest
+    <a href="https://github.com/smxm8/setup_container">
+      script per a posar a punt el servidor</a
+    >
+  </p>
 
-        <hr>
-        <p>En canvi, si prefereixes fer-ho pas a pas, segueix-los a continuació:</p>
+  <hr />
+  <p>En canvi, si prefereixes fer-ho pas a pas, segueix-los a continuació:</p>
 
-        <p>Crea un contenidor anomenat <name><nom-contenidor>contenidor</nom-contenidor></name>:</p>
-        
-            <host>@host</host>
-            <shell>lxc launch ubuntu:20.04 <nom-contenidor>contenidor</nom-contenidor></shell>
-        
+  <p>
+    Abans de començar pot interessar-te
+    <a href="https://www.ionos.es/digitalguide/servidores/know-how/que-es-lxc/"
+      >saber de què es tracta això dels contenidors i en concret LXC</a
+    >
+  </p>
 
-        <p>Accedeix al contenidor:</p>
-        
-            <host>@host</host>
-            <shell>lxc exec <nom-contenidor>contenidor</nom-contenidor> bash</shell>
-        
+  <img src="img/VMvsVE.png" />
 
-        <p>Instal·la el servidor-web Apache dintre del contenidor:</p>
-        
-            <host>root@<nom-contenidor>contenidor</nom-contenidor></host>
-            <shell>
-apt update
-apt install apache2
-            </shell>
-        
+  <p>
+    Crea un contenidor anomenat
+    <name><nom-contenidor>contenidor</nom-contenidor></name
+    >:
+  </p>
 
-        <p>Crea un parell de claus:</p>
-        
-            <host>@host</host>
-            <shell>ssh-keygen -f ~/.ssh/<nom-contenidor>contenidor</nom-contenidor> -N ""</shell>
-        
-        
-        <p>Mostra la <strong>clau-pública</strong> generada:</p>
-        
-            <host>@host</host>
-            <shell>cat ~/.ssh/<nom-contenidor>contenidor</nom-contenidor>.pub</shell>
-        
+  <host>@host</host>
+  <shell
+    >lxc launch ubuntu:20.04 <nom-contenidor>contenidor</nom-contenidor></shell
+  >
 
-        <p>Selecciona la clau-pública i copía-la (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>). 
-            <br>Enganxa-la al fitxer <file>/root/.ssh/authorized_keys</file> del contenidor:
-            </p>
-        
-            <host>root@<nom-contenidor>contenidor</nom-contenidor></host>
-            <shell>echo <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> >> /root/.ssh/authorized_keys</shell>
-        
+  <p>Accedeix al contenidor:</p>
 
-        <p>Crea una carpeta anomenada <nom-contenidor>contenidor</nom-contenidor> al host:</p>
-        
-            <host>@host</host>
-            <shell>mkdir ~/<nom-contenidor>contenidor</nom-contenidor></shell>
-        
+  <host>@host</host>
+  <shell>lxc exec <nom-contenidor>contenidor</nom-contenidor> bash</shell>
 
-        <p>Esbrina l'adreça IP del contenidor:</p>
-        
-            <host>root@<nom-contenidor>contenidor</nom-contenidor></host>
-            <shell>ip a</shell>
-        
+  <p>Instal·la el servidor-web Apache dintre del contenidor:</p>
 
-        <p>Sincronitza la carpeta <nom-contenidor>contenidor</nom-contenidor> del host 
-            amb la carpeta <folder>/var/www/html</folder> del contenidor 
-            (substitueix la IP de la comanda per la IP que tingui el teu contenidor):</p>
-        
-            <host>@host</host>
-            <shell>sshfs root@<red>10.161.122.237</red>:/var/www/html ~/<nom-contenidor>contenidor</nom-contenidor></shell>
-        
+  <host>root@<nom-contenidor>contenidor</nom-contenidor></host>
+  <shell> apt update apt install apache2 </shell>
 
-        <p>Finalment obre la carpeta <folder><nom-contenidor>contenidor</nom-contenidor></folder> amb VSCode (<menu-item>File</menu-item> > <menu-item>Open Folder...</menu-item>). 
-            <br>Crea el document <file>index.html</file> i desenvolupa la web.</p>
+  <p>Crea un parell de claus:</p>
 
-        <p>Pots anar veient els canvis posant la IP del contenidor en la barra d'adreces del Firefox.</p>
+  <host>@host</host>
+  <shell
+    >ssh-keygen -f ~/.ssh/<nom-contenidor>contenidor</nom-contenidor> -N
+    ""</shell
+  >
+
+  <p>Mostra la <strong>clau-pública</strong> generada:</p>
+
+  <host>@host</host>
+  <shell>cat ~/.ssh/<nom-contenidor>contenidor</nom-contenidor>.pub</shell>
+
+  <p>
+    Selecciona la clau-pública i copía-la
+    (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>). <br />Enganxa-la al fitxer
+    <file>/root/.ssh/authorized_keys</file> del contenidor:
+  </p>
+
+  <host>root@<nom-contenidor>contenidor</nom-contenidor></host>
+  <shell
+    >echo <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> >>
+    /root/.ssh/authorized_keys</shell
+  >
+
+  <p>
+    Crea una carpeta anomenada <nom-contenidor>contenidor</nom-contenidor> al
+    host:
+  </p>
+
+  <host>@host</host>
+  <shell>mkdir ~/<nom-contenidor>contenidor</nom-contenidor></shell>
+
+  <p>Esbrina l'adreça IP del contenidor:</p>
+
+  <host>root@<nom-contenidor>contenidor</nom-contenidor></host>
+  <shell>ip a</shell>
+
+  <p>
+    Sincronitza la carpeta <nom-contenidor>contenidor</nom-contenidor> del host
+    amb la carpeta <folder>/var/www/html</folder> del contenidor (substitueix la
+    IP de la comanda per la IP que tingui el teu contenidor):
+  </p>
+
+  <host>@host</host>
+  <shell
+    >sshfs root@<red>10.161.122.237</red>:/var/www/html ~/<nom-contenidor
+      >contenidor</nom-contenidor
+    ></shell
+  >
+
+  <p>
+    Finalment obre la carpeta
+    <folder><nom-contenidor>contenidor</nom-contenidor></folder> amb VSCode
+    (<menu-item>File</menu-item> > <menu-item>Open Folder...</menu-item>).
+    <br />Crea el document <file>index.html</file> i desenvolupa la web.
+  </p>
+
+  <p>
+    Pots anar veient els canvis posant la IP del contenidor en la barra
+    d'adreces del Firefox.
+  </p>
 </section>
