@@ -144,6 +144,9 @@
                 <kbd>Ctrl + V</kbd> <kbd>Ctrl + M</kbd> <kbd>Intro</kbd>
             </shell>
         </li>
+
+        <p>Si tens problemes amb el temps d'escolta del servidor i reps un timout també pots fer la petició amb:</p>
+        <shell>echo -e "GET / HTTP/1.1\r\nHost: info.cern.ch\r\n\r\n" | nc info.cern.ch 80</shell>
     
 
     <p>Aquest cop sí, el servidor ens respon amb <w>200 (OK)</w>, i 
@@ -184,7 +187,12 @@
     </p>
 
     <p>Configurarem el nostre servidor per a requerir usuari:contrasenya en l'accés.</p>
-
+    <info>
+       <p>Recorda que millor treballar amb el teu <strong>Contenidor</strong>.</p>
+       <p>La comanda amb LXC (que ja tens instal·lada a l'Ubuntu de la màquina virtual) per executar el teu contenidor és:</p>
+       <host>@host</host> 
+       <shell>lxc exec nom_contenidor bash</shell>
+    </info>
     <p>Obrim el fitxer de configuració del servidor Apache:</p>
 
     
