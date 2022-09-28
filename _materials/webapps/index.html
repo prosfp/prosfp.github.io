@@ -317,7 +317,7 @@
 
     <p>Configurem Apache per a permetre conexions al port <w>8080</w>:</p>
     
-        <host>@host</host>
+        <host>@container</host>
         <shell>
             nano /etc/apache2/ports.conf
         </shell>
@@ -387,12 +387,12 @@
         </shell>
     
 
-    <p>Si ara fem una petició al servidor sense indicar cap arxiu <url>http://10.2.4.1</url>
+    <p>Si ara fem una petició al servidor sense indicar cap arxiu <url>http://Ip-Contenidor</url>
     el servidor ens enviarà l'arxiu <file>index.html</file> </p>
 
-    <p>Si especifiquem algun arxiu a la petició (e.g. <url>http://10.2.4.1/xxx.html</url>) Apache ens servirà aquest arxiu.</p>
+    <p>Si especifiquem algun arxiu a la petició (e.g. <url>http://Ip-Contenidor/xxx.html</url>) Apache ens servirà aquest arxiu.</p>
 
-    <p>Si l'arxiu que posem a la url (e.g. <url>http://10.2.4.1/opq.html</url>) no existeix, apache ens servirà una 
+    <p>Si l'arxiu que posem a la url (e.g. <url>http://Ip-Contenidor/opq.html</url>) no existeix, apache ens servirà una 
     pàgina <strong>"Not Found"</strong></p>
 
     <p>Per últim, esborrem l'arxiu <file>index.html</file>:</p>
@@ -403,7 +403,7 @@
         </shell>
     
     <p>... i comprovem que Apache ens mostra un pàgina amb la llista d'arxius del 
-        directori, quan no especifiquem cap arxiu a la url <url>http://10.2.4.1/</url> i no hi ha un <file>index.html</file>:
+        directori, quan no especifiquem cap arxiu a la url <url>http://Ip-Contenidor/</url> i no hi ha un <file>index.html</file>:
     </p>
     <img src="img/filelist.png">
 
