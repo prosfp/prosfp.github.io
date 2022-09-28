@@ -45,13 +45,15 @@
   <p>Instal·la el servidor-web Apache dintre del contenidor:</p>
 
   <host>root@<nom-contenidor>contenidor</nom-contenidor></host>
-  <shell> apt update apt install apache2 </shell>
+  <shell> apt update </shell>
+  <shell> aptinstall apache2 </shell>
 
   <p>Crea un parell de claus:</p>
 
   <host>@host</host>
   <shell
-    >ssh-keygen -f ~/.ssh/<nom-contenidor>contenidor</nom-contenidor> -N ""</shell
+    >ssh-keygen -f ~/.ssh/<nom-contenidor>contenidor</nom-contenidor> -N
+    ""</shell
   >
 
   <p>Mostra la <strong>clau-pública</strong> generada:</p>
@@ -66,10 +68,13 @@
   </p>
 
   <host>root@<nom-contenidor>contenidor</nom-contenidor></host>
-  <shell
-    >echo <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> >>
-    /root/.ssh/authorized_keys</shell
-  >
+  #
+  <prettier-ignore>
+    <shell>
+      echo <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> >>
+      /root/.ssh/authorized_keys
+    </shell>
+  </prettier-ignore>
 
   <p>
     Crea una carpeta anomenada <nom-contenidor>contenidor</nom-contenidor> al
