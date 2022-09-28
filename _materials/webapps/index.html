@@ -197,7 +197,7 @@
 
     
         <host>@container</host>
-        <shell>nano /etc/apache2/sites-enabled/000-default</shell>
+        <shell>nano /etc/apache2/sites-enabled/000-default.conf</shell>
     
 
     <p>Afegim les següents línies per a activar l'accés amb usuari/password:</p>
@@ -286,7 +286,7 @@
     <p>Canviem la configuració d'Apache per a que busqui els recursos que se li sol·licitin 
         en una carpeta o l'altra en funció del Host (<w>ServerName</w>) que s'indiqui a la petició <w>http</w>:</p>
     <scfile>
-        /etc/apache2/sites-enabled/000-default
+        /etc/apache2/sites-enabled/000-default.conf
     </scfile>
     <sc none>
         &lt;VirtualHost *:80&gt;
@@ -338,7 +338,7 @@
     <p>Servim dues pàgines diferents en funcio del port de conexió:</p>
 
     <scfile>
-        /etc/apache2/sites-enabled/000-default
+        /etc/apache2/sites-enabled/000-default.conf
     </scfile>
     <sc none>
         &lt;VirtualHost *:80&gt;
@@ -428,7 +428,7 @@
     <p>Ara anem a canviar el <w>DocumentRoot</w>, i farem que sigui <folder>/var/www/html/aaa/</folder>:</p>
 
     <scfile>
-        /etc/apache2/sites-enabled/000-default
+        /etc/apache2/sites-enabled/000-default.conf
     </scfile>
     <sc none>
         &lt;VirtualHost *:80&gt;
